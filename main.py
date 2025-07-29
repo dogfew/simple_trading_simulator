@@ -49,7 +49,7 @@ def main():
     env.reset()
 
     policy = SimpleGridPolicy(
-        batch_size, n_symbols, step_proportion=0.5, buy_cutoff=buy_cutoff, sell_cutoff=sell_cutoff
+        batch_size, n_symbols, step_proportion=0.2, buy_cutoff=buy_cutoff, sell_cutoff=sell_cutoff
     )
 
     data = {

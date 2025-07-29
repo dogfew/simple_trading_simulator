@@ -7,10 +7,9 @@ def random_walk(size):
     return np.clip(1 + np.cumsum(np.random.uniform(low=-1., high=1, size=size), axis=1), 0.1, 2.)
 
 
-def random_cycle_data(size: tuple, offset=1.5):
-    # [0.5, 2.5]
+def random_cycle_data(size: tuple, offset=2, denom=5.):
     data = np.arange(prod(size)).reshape(size)
-    return (np.sin(data) + offset).clip(0.1)
+    return (np.sin(data) + offset) / denom + 1
 
 
 if __name__ == "__main__":

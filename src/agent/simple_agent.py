@@ -36,6 +36,9 @@ class SimpleAgent(BaseAgent):
         """
         return self.state.cash + np.sum(self.state.quantities * market_prices, axis=1)
 
+    def net_profit(self, market_prices):
+        return self.welfare(market_prices) - self._default_state.cash
+
     def observe(self):
         return self.state
 
