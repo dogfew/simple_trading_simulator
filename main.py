@@ -60,7 +60,7 @@ def main():
     }
 
     for _ in range(100):
-        actions = policy(env.observe(env.current_tick), agent.state)
+        actions = policy(env.observe(env.current_tick))
         obs, reward, terminated = env.step(actions)
         obs_market, obs_agent = obs
 
