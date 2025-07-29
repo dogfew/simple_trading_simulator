@@ -59,10 +59,12 @@ def main():
         "cash": []
     }
 
+    next_actions = policy(env.observe(0))
     for _ in range(100):
-        actions = policy(env.observe(env.current_tick))
+        actions = next_actions
         obs, reward, terminated = env.step(actions)
         obs_market, obs_agent = obs
+        next_actions = policy(obs_market)
 
         data['welfare'].append(
             reward[0].item()
